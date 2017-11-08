@@ -37,7 +37,7 @@ var handleMovieAPI = function(err, response, text) {
     if (title === text.toLowerCase()) {
       var voteAverage = response.results[0].vote_average;
       mapRating(voteAverage);
-    } else if (result !== text.toLowerCase()) {
+    } else if (title !== text.toLowerCase()) {
       window.alert('That\'s not a movie! Maybe check your spelling...');
     }
   }
@@ -45,10 +45,11 @@ var handleMovieAPI = function(err, response, text) {
 }
 
  var handleGiphyAPI = function(err, response) {
+   var randomGif = Math.floor(Math.random()*10 +1);
      if (err) {
          console.log(err)
      } else {
-         appendGif(response.data[0].images.preview_gif.url)
+         appendGif(response.data[randomGif].images.preview_gif.url)
      }
 }
 
