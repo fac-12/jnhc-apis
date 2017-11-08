@@ -22,24 +22,34 @@ function generateAPIcall(type, text) {
         request(url, handleMovieAPI, text);
     } else if (type === "gif") {
         url = "http://api.giphy.com/v1/gifs/search?api_key=YK70QDi19ZIBIoIWwHzAlvL9nSV8CXfY&q=" + text;
-        request(url, handleGiphyAPI);
+        request(url, handleGiphyAPI, text);
     }
 
 }
+
+
 
 var handleMovieAPI = function(err, response, text) {
-    console.log(text)
-        //copy response
-        //extracts relevant info
-        //return info or creates new copy object and populates it
+  if (err) {
+    window.alert('Oops! Something went wrong!');
+  } else {
+    var title = response.results[0].title.toLowerCase();
+    if (title === text.toLowerCase()) {
+      var voteAverage = response.results[0].vote_average;
+      mapRating(voteAverage);
+    } else if (result !== text.toLowerCase()) {
+      window.alert('That\'s not a movie! Maybe check your spelling...');
+    }
+  }
+
 }
 
-var handleGiphyAPI = function(err, response) {
-    if (err) {
-        console.log(err)
-    } else {
-        appendGif(response.data[0].images.preview_gif.url)
-    }
+ var handleGiphyAPI = function(err, response) {
+     if (err) {
+         console.log(err)
+     } else {
+         appendGif(response.data[0].images.preview_gif.url)
+     }
 }
 
 // Below function pulls rating from movie API and converts it to a search term for GIPHY
@@ -49,7 +59,6 @@ function mapRating(num) {
     generateAPIcall("gif", ratingDesc[ratingRound])
 }
 
-mapRating(Math.floor(Math.random() * 10) + 1);
 
 if (typeof module !== 'undefined') {
     //change below
