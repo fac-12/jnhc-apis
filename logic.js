@@ -27,6 +27,8 @@ function generateAPIcall(type, text) {
 
 }
 
+
+
 var handleMovieAPI = function(err, response, text) {
   if (err) {
     window.alert('Oops! Something went wrong!');
@@ -42,20 +44,21 @@ var handleMovieAPI = function(err, response, text) {
 
 }
 
-
-var handleGiphyAPI = function(err, response) {
- console.log('working')
+ var handleGiphyAPI = function(err, response) {
+     if (err) {
+         console.log(err)
+     } else {
+         appendGif(response.data[0].images.preview_gif.url)
+     }
 }
 
 // Below function pulls rating from movie API and converts it to a search term for GIPHY
-function mapRating(num){
-  var ratingRound = Math.round(num);
-  var ratingDesc =
-     ['awful', 'bad', 'terrible', 'boring', 'ok', 'average', 'good', 'brilliant', 'fantastic', 'awesome', 'amazing'];
-  generateAPIcall("gif", ratingDesc[ratingRound])
+function mapRating(num) {
+    var ratingRound = Math.round(num);
+    var ratingDesc = ['awful', 'bad', 'terrible', 'boring', 'ok', 'average', 'good', 'brilliant', 'fantastic', 'awesome', 'amazing'];
+    generateAPIcall("gif", ratingDesc[ratingRound])
 }
 
-generateAPIcall('mov', 'titanic');
 
 if (typeof module !== 'undefined') {
     //change below
