@@ -22,10 +22,17 @@ function handleMovieAPI (response) {
 
 }
 
-function mapRating() {
-  //input = rating?
-  //output=term
+// Below function pulls rating from movie API and converts it to a search term for GIPHY
+function mapRating(num){
+var ratingRound = Math.round(num);
+var ratingDesc =
+  ['awful', 'bad', 'terrible', 'boring', 'ok', 'average', 'good', 'brilliant', 'fantastic', 'awesome', 'amazing'];
+
+var searchTerm = ratingDesc[ratingRound];
+
+return (searchTerm);
 }
+
 
 function createSearchURL() {
   //input = url, search term
