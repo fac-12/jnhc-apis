@@ -1,0 +1,73 @@
+@font-face {
+  font-family: 'gunnerstorm';
+  src: url(assets/fonts/gunner_storm/gunnerstorm3dital.ttf);
+}
+
+body {
+background: linear-gradient(to right, #232526, #414345);
+
+}
+
+input[type=text] {
+    width: 70%;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 20px;
+    padding: 12px 20px 12px 40px;
+
+
+}
+
+.submit {
+      padding: 12px 20px 12px 20px;
+      border-radius: 4px;
+      font-size: 20px;
+      text-align: center;
+}
+
+.searchBox {
+  display: flex;
+
+
+}
+
+form {
+  margin: auto;
+}
+
+h1 {
+  color: white;
+  font-family: 'gunnerstorm';
+  text-align: center;
+  font-size: 3rem;
+}
+
+.container {
+  display: flex;
+
+}
+
+h2 {
+  text-align: center;
+}
+
+p, img {
+  display: flex;
+
+
+}
+
+p {
+
+}
+
+img {
+
+}
+
+.results {
+  display: flex;
+
+
+}

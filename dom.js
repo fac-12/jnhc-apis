@@ -8,17 +8,18 @@ button.addEventListener('click', function(event) {
 
 function appendData(dataObj) {
     var container = document.createElement('div');
+    container.className = "container";
+
+    var gif = document.createElement('img');
+    gif.src = dataObj.gifURL;
+    gif.alt = "GIF with emotion reflecting whether movie rating is good or bad";
+    container.appendChild(gif);
 
     var title = document.createElement('h2');
     title.innerText = dataObj.title;
     title.setAttribute('tabindex', 0);
     container.appendChild(title);
 
-
-    var gif = document.createElement('img');
-    gif.src = dataObj.gifURL;
-    gif.alt = "GIF with emotion reflecting whether movie rating is good or bad";
-    container.appendChild(gif);
 
     var poster = document.createElement('img');
     poster.src = dataObj.posterPath;
