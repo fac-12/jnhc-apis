@@ -39,11 +39,12 @@ var handleMovieAPI = function(err, response, text) {
         if (title.toLowerCase() !== text.toLowerCase()) {
             window.alert('That\'s not a movie! Maybe check your spelling...');
         } else {
+            var width = 300;
             movieData["title"] = title;
             movieData["voteAverage"] = film.vote_average;
             movieData["synopsis"] = film.overview;
             movieData["releaseDate"] = film.release_date;
-            movieData["posterPath"] = film.poster_path;
+            movieData["posterPath"] = "http://image.tmdb.org/t/p/w" + width + "//" + film.poster_path;
         }
         mapRating(movieData.voteAverage);
     }
@@ -54,7 +55,7 @@ var handleGiphyAPI = function(err, response) {
     if (err) {
         console.log(err)
     } else {
-        movieData["gifURL"] = response.data[randomGif].images.preview_gif.url;
+        movieData["gifURL"] = response.data[randomGif].images.fixed_height_downsampled.url;
         if (Object.keys(movieData).length === 6) {
             appendData(movieData);
         } else {
