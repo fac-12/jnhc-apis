@@ -12,10 +12,13 @@
 
 <body>
     <h1>Should I watch ... ?</h1>
-    <input type="text" name="searchbox" value="" placeholder="Movie title" id="input" aria-required="true" aria-label="Input movie name" required>
-    <input type="button" name="" value="Search" id="submit">
-
-    <section id="results">
+<div class="searchBox">
+  <form>
+    <input type="text" class="input" name="searchbox" value="" placeholder="Movie title" id="input" aria-required="true" aria-label="Input movie name" required>
+    <input type="button" name="" class="submit" value="Search" id="submit">
+  </form>
+</div>
+    <section class="results"id="results">
     </section>
 
     <script src="logic.js"></script>
