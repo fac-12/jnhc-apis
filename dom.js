@@ -3,7 +3,7 @@ var input = document.getElementById('input');
 var button = document.getElementById('submit');
 
 button.addEventListener('click', function(event) {
-    logic.generateAPIcall('mov', input.value);
+    logic.createMovieURL(input.value);
 })
 
 function appendData(dataObj) {
