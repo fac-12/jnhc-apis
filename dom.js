@@ -20,21 +20,24 @@ function appendData(dataObj) {
     movieContainer.className = "movieContainer";
     container.appendChild(movieContainer);
 
-    var title = document.createElement('h2');
-    title.innerText = dataObj.title;
-    title.setAttribute('tabindex', 0);
-    movieContainer.appendChild(title);
-
+    var moviePosterContainer = document.createElement('div');
+    moviePosterContainer.className = "moviePosterContainer";
+    movieContainer.appendChild(moviePosterContainer);
 
     var poster = document.createElement('img');
     poster.src = dataObj.posterPath;
     poster.alt = "Poster for movie";
     poster.className = "poster";
-    movieContainer.appendChild(poster);
+    moviePosterContainer.appendChild(poster);
 
     var movieTextContainer = document.createElement('div');
     movieTextContainer.className = "movieTextContainer";
     movieContainer.appendChild(movieTextContainer);
+
+    var title = document.createElement('h2');
+    title.innerText = dataObj.title;
+    title.setAttribute('tabindex', 0);
+    movieTextContainer.appendChild(title);
 
     var rating = document.createElement('p');
     rating.innerText = dataObj.voteAverage;

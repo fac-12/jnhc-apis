@@ -1,18 +1,16 @@
-@font-face {
-    font-family: 'gunnerstorm';
-    src: url(assets/fonts/gunner_storm/gunnerstorm3dital.ttf);
-}
-
 * {
     box-sizing: border-box;
+    /* margin: 0;
+    padding: 0; */
 }
 
 body {
     color: black;
+    font-family: 'Zilla Slab', serif;
 }
 
 h1 {
-    font-family: 'gunnerstorm';
+    font-family: 'Zilla Slab Highlight', sans-serif;
     text-align: center;
     font-size: 3rem;
 }
@@ -26,18 +24,20 @@ form {
 }
 
 input[type=text] {
-    width: 70%;
-    border: 2px solid #ccc;
+    width: 60%;
+    border: 2px solid #ecf0f1;
     border-radius: 4px;
-    font-size: 20px;
-    padding: 12px 20px 12px 40px;
+    font-size: 16px;
+    padding: 13px 20px;
 }
 
 .submit {
-    padding: 12px 20px 12px 20px;
+    padding: 15px 20px;
     border-radius: 4px;
+    border: none;
     font-size: 16px;
     text-align: center;
+    background-color: #3498db;
 }
 
 .container {
@@ -49,6 +49,7 @@ input[type=text] {
 h2 {
     text-align: left;
     width: 100%;
+    margin: 0;
 }
 
 .gif {
@@ -64,20 +65,23 @@ img {
 
 .movieContainer {
     display: flex;
+    justify-content: center;
     padding: 2em;
     flex-wrap: wrap;
+    width: 500px;
 }
 
-.poster {
+.moviePosterContainer {
     width: 45%;
 }
 
+.poster {
+    width: 200px;
+}
+
 .movieTextContainer {
+    padding: 0 2em;
     display: flex;
     flex-direction: column;
     width: 45%;
 }
-
-.rating,
-.releaseDate,
-.synopsis {}
