@@ -1,3 +1,5 @@
+var movieData = {}
+
 function request(url, cb, text) {
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function() {
@@ -15,6 +17,7 @@ function request(url, cb, text) {
     xhr.send();
 }
 
+
 function generateAPIcall(type, text) {
     var url = "";
     if (type === "mov") {
@@ -27,30 +30,37 @@ function generateAPIcall(type, text) {
 
 }
 
-
-
 var handleMovieAPI = function(err, response, text) {
-  if (err) {
-    window.alert('Oops! Something went wrong!');
-  } else {
-    var title = response.results[0].title.toLowerCase();
-    if (title === text.toLowerCase()) {
-      var voteAverage = response.results[0].vote_average;
-      mapRating(voteAverage);
-    } else if (title !== text.toLowerCase()) {
-      window.alert('That\'s not a movie! Maybe check your spelling...');
+    if (err) {
+        window.alert('Oops! Something went wrong! Please reload the page.');
+    } else {
+        var film = response.results[0];
+        var title = film.title;
+        if (title.toLowerCase() !== text.toLowerCase()) {
+            window.alert('That\'s not a movie! Maybe check your spelling...');
+        } else {
+            movieData["title"] = title;
+            movieData["voteAverage"] = film.vote_average;
+            movieData["synopsis"] = film.overview;
+            movieData["releaseDate"] = film.release_date;
+            movieData["posterPath"] = film.poster_path;
+        }
+        mapRating(movieData.voteAverage);
     }
-  }
-
 }
 
- var handleGiphyAPI = function(err, response) {
-   var randomGif = Math.floor(Math.random()*10 +1);
-     if (err) {
-         console.log(err)
-     } else {
-         appendGif(response.data[randomGif].images.preview_gif.url)
-     }
+var handleGiphyAPI = function(err, response) {
+    var randomGif = Math.floor(Math.random() * 10 + 1);
+    if (err) {
+        console.log(err)
+    } else {
+        movieData["gifURL"] = response.data[randomGif].images.preview_gif.url;
+        if (Object.keys(movieData).length === 6) {
+            appendData(movieData);
+        } else {
+            window.alert('Oops! Something went wrong! Please reload the page.');
+        }
+    }
 }
 
 // Below function pulls rating from movie API and converts it to a search term for GIPHY
