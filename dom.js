@@ -8,15 +8,15 @@ button.addEventListener('click', function(event){
 
 //need to refine replace child node
 function appendGif(url) {
-    var newImg = document.createElement('img');
-    newImg.src = url;
-
-    if (!gifHolder.firstChild) {
-        var oldImg = gifHolder.firstChild;
-        console.log('hello');
-        gifHolder = gifHolder.replaceChild(newImg, oldImg)
-    } else {
-      console.log('hello2');
-        gifHolder.appendChild(newImg);
+    var imgElement = document.createElement('img');
+    imgElement.src = url;
+    gifHolder.appendChild(imgElement);
+    if (imgElement.src === null) {
+      imgElement.src.replace(url);
     }
+
+    //
+    // if (newImg) {
+    //     var oldImg = newImg;
+    //     gifHolder = gifHolder.replaceChild(newImg, oldImg);
 }
