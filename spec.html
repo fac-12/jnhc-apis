@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>QUnit Example</title>
+    <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.1.1.css">
+</head>
+
+<body>
+    <div id="qunit"></div>
+    <div id="qunit-fixture"></div>
+    <h1>Should I watch ... ?</h1>
+    <div class="searchBox">
+        <form>
+            <input type="text" class="input" name="searchbox" value="" placeholder="Movie title" id="input" aria-required="true" aria-label="Input movie name" required>
+            <input type="button" name="" class="submit" value="Search" id="submit">
+        </form>
+    </div>
+    <section class="results" id="results">
+    </section>
+    <script src="https://code.jquery.com/qunit/qunit-1.23.1.js"></script>
+    <script src="logic.js"></script>
+    <script src="dom.js"></script>
+    <script src="test.js"></script>
+</body>
+
+</html>

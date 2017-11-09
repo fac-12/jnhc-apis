@@ -3,7 +3,7 @@ var input = document.getElementById('input');
 var button = document.getElementById('submit');
 
 button.addEventListener('click', function(event) {
-    generateAPIcall('mov', input.value);
+    logic.generateAPIcall('mov', input.value);
 })
 
 function appendData(dataObj) {
