@@ -1,73 +1,83 @@
 @font-face {
-  font-family: 'gunnerstorm';
-  src: url(assets/fonts/gunner_storm/gunnerstorm3dital.ttf);
+    font-family: 'gunnerstorm';
+    src: url(assets/fonts/gunner_storm/gunnerstorm3dital.ttf);
+}
+
+* {
+    box-sizing: border-box;
 }
 
 body {
-background: linear-gradient(to right, #232526, #414345);
+    color: black;
+}
 
+h1 {
+    font-family: 'gunnerstorm';
+    text-align: center;
+    font-size: 3rem;
+}
+
+.searchBox {
+    display: flex;
+}
+
+form {
+    margin: auto;
 }
 
 input[type=text] {
     width: 70%;
-    box-sizing: border-box;
     border: 2px solid #ccc;
     border-radius: 4px;
     font-size: 20px;
     padding: 12px 20px 12px 40px;
-
-
 }
 
 .submit {
-      padding: 12px 20px 12px 20px;
-      border-radius: 4px;
-      font-size: 20px;
-      text-align: center;
-}
-
-.searchBox {
-  display: flex;
-
-
-}
-
-form {
-  margin: auto;
-}
-
-h1 {
-  color: white;
-  font-family: 'gunnerstorm';
-  text-align: center;
-  font-size: 3rem;
+    padding: 12px 20px 12px 20px;
+    border-radius: 4px;
+    font-size: 16px;
+    text-align: center;
 }
 
 .container {
-  display: flex;
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 h2 {
-  text-align: center;
+    text-align: left;
+    width: 100%;
 }
 
-p, img {
-  display: flex;
-
-
-}
-
-p {
-
+.gif {
+    margin: 2em;
+    border-radius: 4px;
 }
 
 img {
-
+    max-width: 300px;
+    height: auto;
+    box-shadow: 1px 1px 2px black;
 }
 
-.results {
-  display: flex;
-
-
+.movieContainer {
+    display: flex;
+    padding: 2em;
+    flex-wrap: wrap;
 }
+
+.poster {
+    width: 45%;
+}
+
+.movieTextContainer {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+}
+
+.rating,
+.releaseDate,
+.synopsis {}
