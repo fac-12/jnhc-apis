@@ -1,0 +1,95 @@
+* {
+    box-sizing: border-box;
+    /* margin: 0;
+    padding: 0; */
+}
+
+body {
+    color: black;
+    font-family: 'Zilla Slab', serif;
+}
+
+h1 {
+    font-family: 'Zilla Slab Highlight', sans-serif;
+    text-align: center;
+    font-size: 3rem;
+}
+
+.searchBox {
+    display: flex;
+}
+
+form {
+    margin: auto;
+}
+
+input[type=text] {
+    width: 60%;
+    border: 2px solid #ecf0f1;
+    border-radius: 4px;
+    font-size: 16px;
+    padding: 13px 20px;
+    font-family: 'Zilla Slab', serif;
+    margin-right: 10px;
+}
+
+.submit {
+    padding: 15px 20px;
+    border-radius: 4px;
+    border: none;
+    font-size: 16px;
+    text-align: center;
+    background-color: black;
+    color: white;
+    font-family: 'Zilla Slab', serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h2 {
+    text-align: left;
+    width: 100%;
+    margin: 0;
+}
+
+.gif {
+    margin: 2em;
+    border-radius: 4px;
+}
+
+img {
+    max-width: 300px;
+    height: auto;
+    box-shadow: 1px 1px 2px black;
+}
+
+.movieContainer {
+    display: flex;
+    justify-content: center;
+    padding: 0.5em;
+    flex-wrap: wrap;
+    width: 700px;
+}
+
+.moviePosterContainer {
+    width: 35%;
+}
+
+.poster {
+    width: 200px;
+}
+
+.movieTextContainer {
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+    text-align: justify;
+}
+
+.rating {
+  font-size: 1.4em;
+}
