@@ -1,14 +1,15 @@
-test(
-    "output object is expected object",
+QUnit.test(
+    "generates correct The Movie Database url",
     function(assert) {
-        const actual = logic.generateAPIcall("mov", "jaws");
-        const expected = {
-            gifURL: "https://media3.giphy.com/media/f3xLsh5ceSbi8/200_d.gif",
-            posterPath: "http://image.tmdb.org/t/p/w300///l1yltvzILaZcx2jYvc5sEMkM7Eh.jpg",
-            releaseDate: "1975-06-18",
-            synopsis: "An insatiable great white shark terrorizes the townspeople of Amity Island, The police chief, an oceanographer and a grizzled shark hunter seek to destroy the bloodthirsty beast.",
-            title: "Jaws",
-            voteAverage: 7.5
-        };
-        assert.equal(expected, actual);
+        var actual = logic.generateAPIcall("mov", "jaws");
+        var expected = "https://api.themoviedb.org/3/search/movie?api_key=f76207a8fd7032c7072aa2f3dc514176&query=jaws";
+        assert.deepEqual(actual, expected);
+    });
+
+QUnit.test(
+    "generates correct Giphy url",
+    function(assert) {
+        var actual = logic.generateAPIcall("gif", "thumbs+down");
+        var expected = "https://api.giphy.com/v1/gifs/random?api_key=YK70QDi19ZIBIoIWwHzAlvL9nSV8CXfY&tag=applause&rating=g";
+        assert.deepEqual(actual, expected);
     });

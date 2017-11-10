@@ -1,5 +1,5 @@
 var results = document.getElementById('results');
-var input = document.getElementById('input');
+var input = document.getElementById('movie-search-input');
 var form = document.getElementById('form');
 
 form.addEventListener('submit', function(event) {
