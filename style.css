@@ -29,6 +29,8 @@ input[type=text] {
     border-radius: 4px;
     font-size: 16px;
     padding: 13px 20px;
+    font-family: 'Zilla Slab', serif;
+    margin-right: 10px;
 }
 
 .submit {
@@ -37,7 +39,9 @@ input[type=text] {
     border: none;
     font-size: 16px;
     text-align: center;
-    background-color: #3498db;
+    background-color: black;
+    color: white;
+    font-family: 'Zilla Slab', serif;
 }
 
 .container {
@@ -66,13 +70,13 @@ img {
 .movieContainer {
     display: flex;
     justify-content: center;
-    padding: 2em;
+    padding: 0.5em;
     flex-wrap: wrap;
-    width: 500px;
+    width: 700px;
 }
 
 .moviePosterContainer {
-    width: 45%;
+    width: 35%;
 }
 
 .poster {
@@ -80,8 +84,12 @@ img {
 }
 
 .movieTextContainer {
-    padding: 0 2em;
     display: flex;
     flex-direction: column;
-    width: 45%;
+    width: 65%;
+    text-align: justify;
+}
+
+.rating {
+  font-size: 1.4em;
 }

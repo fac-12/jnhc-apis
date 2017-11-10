@@ -1,8 +1,9 @@
 var results = document.getElementById('results');
 var input = document.getElementById('input');
-var button = document.getElementById('submit');
+var form = document.getElementById('form');
 
-button.addEventListener('click', function(event) {
+form.addEventListener('submit', function(event) {
+    event.preventDefault();
     logic.generateAPIcall('mov', input.value);
 })
 
