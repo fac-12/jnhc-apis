@@ -39,7 +39,8 @@ We then split into pairs to write the functions.
 
 * Testing
 
-We now realise that it was difficult to use Test Driven Development at each stage because our functions were not pure. This made it hard to test functions in isolation because they would require multiple arguments passed from other functions.
+We now realise that it is difficult to test once all of the code is written. As each of our functions depended on others passing information it was hard to test in isolation, so it is important to practise Test Driven Development from the start!
+
 
 * Plan visual design/layout at same time as architecture
 
