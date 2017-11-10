@@ -23,8 +23,10 @@ var logic = {
         if (type === "mov") {
             url = "https://api.themoviedb.org/3/search/movie?api_key=f76207a8fd7032c7072aa2f3dc514176&query=" + text.split(' ').join('+');
             logic.request(url, logic.handleMovieAPI, text);
+            console.log(url)
+            return url;
         } else if (type === "gif") {
-            url = "https://api.giphy.com/v1/gifs/random?api_key=YK70QDi19ZIBIoIWwHzAlvL9nSV8CXfY&tag=" + text + "&rating=g" ;
+            url = "https://api.giphy.com/v1/gifs/random?api_key=YK70QDi19ZIBIoIWwHzAlvL9nSV8CXfY&tag=" + text + "&rating=g";
             console.log(url);
             logic.request(url, logic.handleGiphyAPI, text);
         }
@@ -59,6 +61,7 @@ var logic = {
             movieData["gifURL"] = response.data.fixed_height_downsampled_url;
             if (Object.keys(movieData).length === 6) {
                 appendData(movieData);
+                console.log(movieData);
                 return movieData
             } else {
                 window.alert('Oops! Something went wrong! Please reload the page.');
@@ -72,9 +75,4 @@ var logic = {
         var ratingDesc = ['thumbs+down', 'thumbs+down', 'thumbs+down', 'thumbs+down', 'meh', 'meh', 'thumbs+up', 'thumbs+up', 'applause', 'applause', 'applause'];
         logic.generateAPIcall("gif", ratingDesc[ratingRound])
     }
-}
-
-if (typeof module !== 'undefined') {
-    //change below
-    module.exports = logic;
 }

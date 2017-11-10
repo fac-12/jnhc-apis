@@ -91,5 +91,6 @@ img {
 }
 
 .rating {
-  font-size: 1.4em;
+    font-size: 1.4em;
+    margin-bottom: 0.5em;
 }

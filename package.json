@@ -1,24 +1,22 @@
 {
-  "name": "jnhc-apis",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "tape test.js | tap-spec"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/fac-12/jnhc-apis.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/fac-12/jnhc-apis/issues"
-  },
-  "homepage": "https://github.com/fac-12/jnhc-apis#readme",
-  "devDependencies": {
-    "istanbul": "^0.4.5",
-    "tap-spec": "^4.1.1",
-    "tape": "^4.8.0"
-  }
+    "name": "jnhc-apis",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/fac-12/jnhc-apis.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/fac-12/jnhc-apis/issues"
+    },
+    "homepage": "https://github.com/fac-12/jnhc-apis#readme",
+    "devDependencies": {
+        "istanbul": "^0.4.5"
+    }
 }
