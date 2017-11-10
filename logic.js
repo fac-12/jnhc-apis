@@ -25,6 +25,7 @@ var logic = {
             logic.request(url, logic.handleMovieAPI, text);
         } else if (type === "gif") {
             url = "https://api.giphy.com/v1/gifs/random?api_key=YK70QDi19ZIBIoIWwHzAlvL9nSV8CXfY&tag=" + text + "&rating=g" ;
+            console.log(url);
             logic.request(url, logic.handleGiphyAPI, text);
         }
 
@@ -46,7 +47,7 @@ var logic = {
                 movieData["releaseDate"] = film.release_date;
                 movieData["posterPath"] = "http://image.tmdb.org/t/p/w" + width + "//" + film.poster_path;
             }
-            logic.mapRating(movieData.voteAverage);
+            logic.mapRating(film.vote_average);
         }
     },
 
@@ -68,7 +69,7 @@ var logic = {
     // Below function pulls rating from movie API and converts it to a search term for GIPHY
     mapRating: function(num) {
         var ratingRound = Math.round(num);
-        var ratingDesc = ['awful', 'bad', 'terrible', 'boring', 'ok', 'average', 'good', 'brilliant', 'fantastic', 'awesome', 'amazing'];
+        var ratingDesc = ['thumbs+down', 'thumbs+down', 'thumbs+down', 'thumbs+down', 'meh', 'meh', 'thumbs+up', 'thumbs+up', 'applause', 'applause', 'applause'];
         logic.generateAPIcall("gif", ratingDesc[ratingRound])
     }
 }
