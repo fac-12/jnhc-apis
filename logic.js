@@ -18,16 +18,14 @@ var logic = {
         xhr.send();
     },
 
-    generateAPIcall: function(type, text) {
+    generateURL: function(type, text) {
         var url = "";
         if (type === "mov") {
             url = "https://api.themoviedb.org/3/search/movie?api_key=f76207a8fd7032c7072aa2f3dc514176&query=" + text.split(' ').join('+');
             logic.request(url, logic.handleMovieAPI, text);
-            console.log(url)
             return url;
         } else if (type === "gif") {
             url = "https://api.giphy.com/v1/gifs/random?api_key=YK70QDi19ZIBIoIWwHzAlvL9nSV8CXfY&tag=" + text + "&rating=g";
-            console.log(url);
             logic.request(url, logic.handleGiphyAPI, text);
         }
 
@@ -73,6 +71,6 @@ var logic = {
     mapRating: function(num) {
         var ratingRound = Math.round(num);
         var ratingDesc = ['thumbs+down', 'thumbs+down', 'thumbs+down', 'thumbs+down', 'meh', 'meh', 'thumbs+up', 'thumbs+up', 'applause', 'applause', 'applause'];
-        logic.generateAPIcall("gif", ratingDesc[ratingRound])
+        logic.generateURL("gif", ratingDesc[ratingRound])
     }
 }

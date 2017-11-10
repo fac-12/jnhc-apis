@@ -4,7 +4,7 @@ var form = document.getElementById('form');
 
 form.addEventListener('submit', function(event) {
     event.preventDefault();
-    logic.generateAPIcall('mov', input.value);
+    logic.generateURL('mov', input.value);
 })
 
 function appendData(dataObj) {
