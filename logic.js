@@ -44,7 +44,7 @@ var logic = {
                 movieData["title"] = title;
                 movieData["voteAverage"] = "★ " + film.vote_average;
                 movieData["synopsis"] = film.overview;
-                movieData["releaseDate"] = film.release_date;
+                movieData["releaseDate"] = "Release Year: " + film.release_date.substring(0, 4);
                 movieData["posterPath"] = "http://image.tmdb.org/t/p/w" + width + "//" + film.poster_path;
             }
             logic.mapRating(film.vote_average);
