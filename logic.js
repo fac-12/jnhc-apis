@@ -24,7 +24,7 @@ var logic = {
             url = "https://api.themoviedb.org/3/search/movie?api_key=f76207a8fd7032c7072aa2f3dc514176&query=" + text.split(' ').join('+');
             logic.request(url, logic.handleMovieAPI, text);
         } else if (type === "gif") {
-            url = "https://api.giphy.com/v1/gifs/search?api_key=YK70QDi19ZIBIoIWwHzAlvL9nSV8CXfY&q=" + text;
+            url = "https://api.giphy.com/v1/gifs/random?api_key=YK70QDi19ZIBIoIWwHzAlvL9nSV8CXfY&tag=" + text + "&rating=g" ;
             logic.request(url, logic.handleGiphyAPI, text);
         }
 
@@ -51,11 +51,11 @@ var logic = {
     },
 
     handleGiphyAPI: function(err, response) {
-        var randomGif = Math.floor(Math.random() * 10 + 1);
+        // var randomGif = Math.floor(Math.random() * 10 + 1);
         if (err) {
             console.log(err)
         } else {
-            movieData["gifURL"] = response.data[randomGif].images.fixed_height_downsampled.url;
+            movieData["gifURL"] = response.data.fixed_height_downsampled_url;
             if (Object.keys(movieData).length === 6) {
                 appendData(movieData);
                 return movieData
